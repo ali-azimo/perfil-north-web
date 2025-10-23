@@ -23,7 +23,7 @@ export default function Perfil() {
     {
       id: 'ali',
       nome: 'Ali Azimo',
-      titulo: 'Fundador & Desenvolvedor Full-Stack',
+      titulo: 'Desenvolvedor Full-Stack',
       cargos: [
         { icone: <Code className="w-4 h-4" />, texto: 'Desenvolvedor Full-Stack na North-Web' },
         { icone: <BookOpen className="w-4 h-4" />, texto: 'Estudante de Contabilidade e Fiscalidade' },
@@ -36,7 +36,7 @@ export default function Perfil() {
         { tipo: 'phone', valor: '+258 844314455' },
         { tipo: 'phone', valor: '+258 874314455' },
         { tipo: 'phone', valor: '+258 824533491' },
-        { tipo: 'email', valor: 'ali.azimo@northweb.com' }
+        { tipo: 'email', valor: 'webdesign.aejl@gmail.com.com' }
       ],
       habilidades: ['JavaScript', 'React', 'Node.js', 'Python', 'Power BI', 'Excel Avançado'],
       experiencia: '4+ anos',
@@ -58,7 +58,7 @@ export default function Perfil() {
       imagem: virgilioImage,
       contactos: [
         { tipo: 'phone', valor: '+258 862541650' },
-        { tipo: 'email', valor: 'virgilio.massamba@northweb.com' }
+        { tipo: 'email', valor: 'Virgiliomariomassamba7@gmail.com' }
       ],
       habilidades: ['Contabilidade', 'Gestão', 'Docência', 'Administração', 'Excel'],
       experiencia: '3+ anos',
