@@ -19,9 +19,9 @@ import {
 
 export default function Home() {
   const stats = [
-    { number: "500+", label: "Alunos Formados" },
-    { number: "50+", label: "Projetos Entregues" },
-    { number: "98%", label: "Satisfação dos Clientes" },
+    { number: "100+", label: "Alunos Formados" },
+    { number: "20+", label: "Projetos Entregues" },
+    { number: "18%", label: "Satisfação dos Clientes" },
     { number: "24/7", label: "Suporte Disponível" }
   ];
 
@@ -38,7 +38,7 @@ export default function Home() {
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Certificação",
+      title: "Segurança",
       description: "Certificado reconhecido ao concluir cada curso"
     },
     {
@@ -48,20 +48,6 @@ export default function Home() {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Maria Santos",
-      role: "Analista de Dados",
-      content: "As aulas de Power BI transformaram minha forma de trabalhar com dados. Agora consigo criar dashboards profissionais!",
-      rating: 5
-    },
-    {
-      name: "João Silva",
-      role: "Desenvolvedor",
-      content: "Do zero ao profissional em 6 meses. A North-Web me deu a base sólida que precisava para minha carreira.",
-      rating: 5
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-blue-50">
@@ -70,12 +56,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full mb-6 border border-white/20">
-              <Star className="w-4 h-4 text-yellow-400 fill-current" />
-              <span className="text-sm font-medium">Líder em Formação Tecnológica em Moçambique</span>
-            </div>
             
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
               Transforme Sua
               <span className="block bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">
                 Carreira Digital
@@ -240,36 +222,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-20 bg-gray-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              O Que Nossos <span className="bg-gradient-to-r from-yellow-400 to-amber-400 bg-clip-text text-transparent">Alunos Dizem</span>
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Junte-se a centenas de profissionais que transformaram suas carreiras
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-gray-800 p-8 rounded-2xl border border-gray-700">
-                <div className="flex gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                  ))}
-                </div>
-                <p className="text-gray-300 mb-6 text-lg leading-relaxed">"{testimonial.content}"</p>
-                <div>
-                  <div className="font-semibold text-white">{testimonial.name}</div>
-                  <div className="text-gray-400 text-sm">{testimonial.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
