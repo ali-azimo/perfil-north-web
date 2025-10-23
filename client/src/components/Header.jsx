@@ -31,7 +31,7 @@ export default function Header() {
     { path: "/aulas", label: "Aulas", icon: <FaChalkboardTeacher className="text-lg" /> },
     { path: "/sobre", label: "Sobre", icon: <FaInfoCircle className="text-lg" /> },
     { path: "/perfil", label: "Equipe", icon: <FaUserCircle className="text-lg" /> },
-    { path: "/contactos", label: "Contactos", icon: <FaEnvelope className="text-lg" /> }
+    { path: "/contacto", label: "Contacto", icon: <FaEnvelope className="text-lg" /> } // ← CORRIGIDO
   ];
 
   const isActiveLink = (path) => {
@@ -46,8 +46,6 @@ export default function Header() {
         : 'bg-gradient-to-br from-slate-800 to-slate-900 text-white'
       }
     `}>
-      {/* Progress Bar Indicator */}
-      
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-3">
           {/* LOGO */}
@@ -135,7 +133,7 @@ export default function Header() {
               Ver Cursos
             </Link>
             <Link
-              to="/contactos"
+              to="/contacto" // ← CORRIGIDO (removido o "s")
               className="bg-gradient-to-r from-yellow-400 to-amber-500 text-blue-900 px-6 py-2.5 rounded-xl font-bold hover:from-yellow-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Começar Agora
@@ -211,7 +209,7 @@ export default function Header() {
                 Ver Cursos
               </Link>
               <Link
-                to="/contactos"
+                to="/contacto" // ← CORRIGIDO (removido o "s")
                 onClick={() => setIsMenuOpen(false)}
                 className="bg-gradient-to-r from-yellow-400 to-amber-500 text-blue-900 px-4 py-3 rounded-xl font-bold text-center hover:from-yellow-300 hover:to-amber-400 transform hover:scale-105 transition-all duration-300 shadow-lg"
               >
