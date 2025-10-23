@@ -25,30 +25,34 @@ export default function Contacto() {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // ⚙️ Envio com EmailJS
-    emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      formData,
-      import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
-      {
-        from_name: formData.nome,
-        from_email: formData.email,
-        telefone: formData.telefone,
-        assunto: formData.assunto,
-        message: formData.mensagem
-      },
-    )
-    .then(() => {
-      setSubmitStatus("success");
-      setFormData({ nome: "", email: "", telefone: "", assunto: "", mensagem: "" });
-    })
-    .catch(() => {
-      setSubmitStatus("error");
-    })
-    .finally(() => {
-      setIsSubmitting(false);
-    });
+    // ⚙️ parâmetros que coincidem com o template do EmailJS
+    const templateParams = {
+      username: formData.nome,
+      email: formData.email,
+      telefone: formData.telefone || "Não informado",
+      assunto: formData.assunto,
+      message: formData.mensagem,
+      time: new Date().toLocaleString("pt-PT"),
+    };
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(() => {
+        setSubmitStatus("success");
+        setFormData({ nome: "", email: "", telefone: "", assunto: "", mensagem: "" });
+      })
+      .catch((error) => {
+        console.error("Erro ao enviar:", error);
+        setSubmitStatus("error");
+      })
+      .finally(() => {
+        setIsSubmitting(false);
+      });
   };
 
   const contactInfo = [
@@ -99,7 +103,7 @@ export default function Contacto() {
             Vamos <span className="text-amber-400">Conversar</span>
           </h1>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            Pronto para transformar suas ideias em realidade? Entre em contacto e descubra 
+            Pronto para transformar as suas ideias em realidade? Entre em contacto e descubra 
             como podemos ajudar no seu projeto de tecnologia.
           </p>
         </div>
@@ -150,7 +154,7 @@ export default function Contacto() {
           <div className="lg:col-span-2">
             <div className="bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
               <div className="text-center mb-8">
-                <h2 className="text-3xl font-bold text-slate-900 mb-3">Envie sua Mensagem</h2>
+                <h2 className="text-3xl font-bold text-slate-900 mb-3">Envie a sua Mensagem</h2>
                 <p className="text-slate-600 max-w-2xl mx-auto">
                   Preencha o formulário abaixo e entraremos em contacto o mais breve possível.
                 </p>
@@ -224,11 +228,11 @@ export default function Contacto() {
                       className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500"
                     >
                       <option value="">Selecione</option>
-                      <option value="desenvolvimento-web">Desenvolvimento Web</option>
-                      <option value="formacao">Formação & Cursos</option>
-                      <option value="consultoria">Consultoria</option>
-                      <option value="orcamento">Orçamento</option>
-                      <option value="outro">Outro</option>
+                      <option value="Desenvolvimento Web">Desenvolvimento Web</option>
+                      <option value="Formação e Cursos">Formação & Cursos</option>
+                      <option value="Consultoria">Consultoria</option>
+                      <option value="Orçamento">Orçamento</option>
+                      <option value="Outro">Outro</option>
                     </select>
                   </div>
                 </div>
